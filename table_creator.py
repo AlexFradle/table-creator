@@ -4,7 +4,7 @@ from typing import List, Union
 class TableCreator:
     def __init__(self, column_names: Union[list, tuple], data: List[list], extra_gap: int=2, with_border: bool=False):
         self.__column_names = column_names
-        self.__data = data
+        self.__data = [[str(j) for j in i] for i in data]
         self.__data = [row + ([""] * (len(self.__column_names) - len(row))) for row in self.__data]
         self.__extra_gap = extra_gap
         self.__with_border = with_border
